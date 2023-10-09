@@ -11,17 +11,18 @@ using Projeto_Backend_MF.Models;
 namespace Projeto_Backend_MF.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231009024236_M01-AddTableVeiculo")]
-    partial class M01AddTableVeiculo
+    [Migration("20231009143559_M01-addVeiculo")]
+    partial class M01addVeiculo
     {
+        /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.19")
+                .HasAnnotation("ProductVersion", "7.0.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
             modelBuilder.Entity("Projeto_Backend_MF.Models.Veiculo", b =>
                 {
@@ -29,7 +30,7 @@ namespace Projeto_Backend_MF.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("AnoFabricação")
                         .HasColumnType("int");
