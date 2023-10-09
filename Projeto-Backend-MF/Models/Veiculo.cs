@@ -21,5 +21,7 @@ namespace Projeto_Backend_MF.Models
         [Required(ErrorMessage = "Obrigatorio informar o ano do modelo")]
         [Display(Name = "Ano do Modelo")]
         public int AnoModelo { get; set;}
+
+        public ICollection<Consumo> Consumos { get; set; }
     }
 }
